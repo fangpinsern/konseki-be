@@ -7,19 +7,21 @@ import (
 
 const (
 	JWT_SECRET_KEY = "JWT_SECRET_KEY"
+	KONSEKI_LINK = "KONSEKI_LINK"
 )
 
 var (
 	jwtSecretKey string
+	konsekiLink string
 )
 
 type Config struct {
 	JwtSecretKey string `mapstructure:"JWT_SECRET_KEY"`
-	//MongoURLKey  string `mapstructure:"MONGO_URL"`
+	KonsekiLink string `mapstructure:"KONSEKI_LINK"`
 }
 
 const (
-	envFile = ".env"
+	envFile = "./env/.env"
 )
 
 func InitializeConfig(path string) (Config, error) {
@@ -45,4 +47,11 @@ func GetJwtSecret() string {
 		jwtSecretKey = viper.GetString(JWT_SECRET_KEY)
 	}
 	return jwtSecretKey
+}
+
+func GetKonsekiLink() string {
+	if konsekiLink == "" {
+		konsekiLink = viper.GetString(KONSEKI_LINK)
+	}
+	return konsekiLink
 }

@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"github.com/gin-gonic/gin"
+	"konseki-be/config"
 	"konseki-be/db"
 	"konseki-be/logger"
 	"konseki-be/services"
@@ -42,7 +43,7 @@ func CreateEventController(c *gin.Context) {
 
 	logger.LogInternal(c, nil, result.ID)
 
-	joinEventLink := "https://google.com/"
+	joinEventLink := config.GetKonsekiLink()
 	eventId := result.ID
 	createEventResponse.Link = joinEventLink + "?eventId=" + eventId
 	createEventResponse.Name = eventName

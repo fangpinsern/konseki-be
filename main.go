@@ -20,7 +20,7 @@ type PingStuct struct {
 }
 
 func main() {
-	config.InitializeConfig(".")
+	config.InitializeConfig("./env")
 	// may need to initialize db
 	db.InitializeDatabase(context.Background())
 	// need to initialize email service
