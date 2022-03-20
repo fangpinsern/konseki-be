@@ -12,6 +12,7 @@ import (
 
 // Controller creates an event and stores it in the database
 // The creator is tagged to the user
+
 func CreateEventController(c *gin.Context) {
 	var createEventRequest CreateEventRequest
 	var createEventResponse CreateEventResponse
@@ -41,8 +42,11 @@ func CreateEventController(c *gin.Context) {
 
 	logger.LogInternal(c, nil, result.ID)
 
-	createEventResponse.Id = result.ID
+	joinEventLink := "https://google.com/"
+	eventId := result.ID
+	createEventResponse.Link = joinEventLink + "?eventId=" + eventId
 	createEventResponse.Name = eventName
+	createEventResponse.Id = eventId
 
 
 	c.IndentedJSON(http.StatusAccepted, createEventResponse)

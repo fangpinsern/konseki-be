@@ -9,6 +9,7 @@ type CreateEventRequest struct {
 type CreateEventResponse struct {
 	Name string `json:"name"`
 	Id    string `json:"id"`
+	Link string `json:"link"`
 }
 
 type GetEventsResponse struct {
