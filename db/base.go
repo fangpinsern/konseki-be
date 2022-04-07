@@ -25,7 +25,7 @@ var UtilsCollection *firestore.CollectionRef
 func InitializeDatabase(c context.Context) {
 
 	opt:=option.WithCredentialsJSON(config.GetFirestoreCreds())
-	//opt := option.WithCredentialsFile("env/konseki-e249a-firebase-adminsdk-b6hla-952cf056a4.json")
+
 	app, err := firebase.NewApp(context.Background(), nil, opt)
 	if err != nil {
 		panic("Failed to initialize DB")
