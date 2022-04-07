@@ -48,7 +48,7 @@ func GetMessagesController(c *gin.Context) {
 		newRes := ResponseMessage{
 			Id:          documentData["Id"].(string),
 			Message:     msgVal.(string),
-			ExposureDate: documentData["Date"].(int64),
+			ExposureDate: documentData["ExposureDate"].(int64),
 			MessageType: msgType,
 			CreatedDate: msgCreatedDate,
 			IsImportant: msgIsImportant,

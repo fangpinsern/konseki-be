@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"github.com/gin-gonic/gin"
+	"konseki-be/logger"
 	"konseki-be/services"
 	"konseki-be/util"
 	"net/http"
@@ -27,9 +28,19 @@ func JoinEventController(c *gin.Context){
 		return
 	}
 
+	creatorProfile, err := services.GetProfile(c, updatedEvent.CreatorId)
+	if err != nil {
+		joinEventResponse.IsSuccess = false
+		logger.LogInternal(c, err, "creator profile not found for this event")
+		c.JSON(http.StatusBadRequest, joinEventResponse)
+		return
+	}
+
 	joinEventResponse.IsSuccess = true
 	joinEventResponse.EventName = updatedEvent.Name
 	joinEventResponse.Id = eventId
+	joinEventResponse.CreatorName = creatorProfile.Name
+
 	c.JSON(http.StatusOK, joinEventResponse)
 	return
 }

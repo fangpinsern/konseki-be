@@ -19,7 +19,7 @@ func CreateMessage(c *gin.Context, msgInfo MessageInfo) (*firestore.DocumentRef,
 	// create messages in message collection
 	// creation is done for everyone they have interacted with
 
-	if isValidMsgType(msgInfo.MsgType) {
+	if !isValidMsgType(msgInfo.MsgType) {
 		err := errors.New("message type is not supported. please use a valid message type")
 		return nil, nil, err
 	}

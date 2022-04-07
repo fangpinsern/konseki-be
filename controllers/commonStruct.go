@@ -44,6 +44,7 @@ type JoinEventResponse struct {
 	IsSuccess bool `json:"is_success"`
 	EventName string `json:"event_name"`
 	Id string `json:"id"`
+	CreatorName string `json:"creator_name"`
 }
 
 type RegisterRequest struct {
@@ -54,14 +55,6 @@ type RegisterResponse struct {
 	Name string `json:"name"`
 	Email string `json:"email"`
 	Id    string `json:"id"`
-}
-
-type Profile struct {
-	Id string `json:"id"`
-	Name string `json:"name"`
-	IsInfected bool `json:"is_infected"`
-	Email string `json:"email"`
-	Bio string `json:"bio"`
 }
 
 type UpdateStatusRequest struct {

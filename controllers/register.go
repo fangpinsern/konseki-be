@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"konseki-be/db"
 	"konseki-be/logger"
+	"konseki-be/services"
 	"konseki-be/util"
 	"net/http"
 )
@@ -22,7 +23,7 @@ func RegisterController(c *gin.Context) {
 	id := util.GetUserId(c)
 
 	// TODO: save user profile to firebase store
-	profile := Profile{
+	profile := services.Profile{
 		Id:         id,
 		Name:       name,
 		IsInfected: false,
