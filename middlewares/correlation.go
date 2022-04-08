@@ -1,8 +1,8 @@
 package middlewares
 
 import (
+	"github.com/fangpinsern/konseki-be/util"
 	"github.com/gin-gonic/gin"
-	"konseki-be/util"
 )
 
 func CorrelationData() gin.HandlerFunc {

@@ -2,10 +2,10 @@ package services
 
 import (
 	"cloud.google.com/go/firestore"
+	"github.com/fangpinsern/konseki-be/db"
+	"github.com/fangpinsern/konseki-be/logger"
 	"github.com/gin-gonic/gin"
 	"google.golang.org/api/iterator"
-	"konseki-be/db"
-	"konseki-be/logger"
 )
 
 func GetAttendedEvents(c *gin.Context, userId string) ([]Event, error) {

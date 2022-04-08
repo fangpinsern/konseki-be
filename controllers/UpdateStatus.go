@@ -1,11 +1,11 @@
 package controllers
 
 import (
+	"github.com/fangpinsern/konseki-be/db"
+	"github.com/fangpinsern/konseki-be/logger"
+	"github.com/fangpinsern/konseki-be/services"
+	"github.com/fangpinsern/konseki-be/util"
 	"github.com/gin-gonic/gin"
-	"konseki-be/db"
-	"konseki-be/logger"
-	"konseki-be/services"
-	"konseki-be/util"
 	"net/http"
 )
 

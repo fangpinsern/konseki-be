@@ -2,9 +2,9 @@ package logger
 
 import (
 	"errors"
+	"github.com/fangpinsern/konseki-be/util"
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
-	"konseki-be/util"
 	"os"
 	"runtime"
 	"strconv"

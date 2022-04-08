@@ -2,9 +2,9 @@ package services
 
 import (
 	"cloud.google.com/go/firestore"
+	"github.com/fangpinsern/konseki-be/db"
+	"github.com/fangpinsern/konseki-be/logger"
 	"github.com/gin-gonic/gin"
-	"konseki-be/db"
-	"konseki-be/logger"
 )
 
 func GetProfile(c *gin.Context, userId string) (Profile, error) {

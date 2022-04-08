@@ -1,6 +1,6 @@
 package controllers
 
-import "konseki-be/services"
+import "github.com/fangpinsern/konseki-be/services"
 
 type CreateEventRequest struct {
 	Name string `json:"name" binding:"required"`

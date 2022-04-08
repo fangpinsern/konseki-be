@@ -2,9 +2,9 @@ package middlewares
 
 import (
 	"fmt"
+	"github.com/fangpinsern/konseki-be/db"
+	"github.com/fangpinsern/konseki-be/util"
 	"github.com/gin-gonic/gin"
-	"konseki-be/db"
-	"konseki-be/util"
 	"net/http"
 )
 

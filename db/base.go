@@ -5,8 +5,8 @@ import (
 	"context"
 	firebase "firebase.google.com/go"
 	"firebase.google.com/go/auth"
+	"github.com/fangpinsern/konseki-be/config"
 	"google.golang.org/api/option"
-	"konseki-be/config"
 )
 
 var Database *firebase.App

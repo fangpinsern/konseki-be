@@ -2,10 +2,10 @@ package controllers
 
 import (
 	"errors"
+	"github.com/fangpinsern/konseki-be/logger"
+	"github.com/fangpinsern/konseki-be/services"
+	"github.com/fangpinsern/konseki-be/util"
 	"github.com/gin-gonic/gin"
-	"konseki-be/logger"
-	"konseki-be/services"
-	"konseki-be/util"
 	"net/http"
 )
 
