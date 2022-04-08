@@ -8,6 +8,7 @@ import (
 	"github.com/fangpinsern/konseki-be/logger"
 	"github.com/fangpinsern/konseki-be/middlewares"
 	"github.com/fangpinsern/konseki-be/util"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"os"
@@ -27,6 +28,8 @@ func main() {
 	// initialize logger
 	logger.InitializeLogger()
 	router := gin.Default()
+
+	router.Use(cors.Default())
 
 	router.Use(middlewares.CorrelationData())
 	router.Use(middlewares.AuthorizeToken())
