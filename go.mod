@@ -1,4 +1,4 @@
-module konseki-be
+module github.com/fangpinsern/konseki-be
 
 go 1.17
 
